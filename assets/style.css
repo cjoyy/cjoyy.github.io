@@ -1,9 +1,3 @@
-/* ============================
-   CALVIN JOY TARIGAN — PORTFOLIO
-   Dark Professional Theme
-   Fonts: Syne + DM Mono + DM Sans
-   ============================ */
-
 :root {
   --bg: #0a0a0f;
   --bg2: #0f0f18;
@@ -16,9 +10,9 @@
   --text-muted: #7a7a9a;
   --text-dim: #4a4a6a;
 
-  --accent: #63b3ed;      /* cool blue */
-  --accent2: #a78bfa;     /* violet */
-  --accent3: #34d399;     /* emerald green */
+  --accent: #63b3ed;
+  --accent2: #a78bfa;
+  --accent3: #34d399;
 
   --font-display: 'Syne', sans-serif;
   --font-mono: 'DM Mono', monospace;
@@ -266,6 +260,28 @@ main {
   transition: color 0.2s;
 }
 .btn-ghost:hover { color: var(--text); }
+
+.hero-profiles {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.profile-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+  transition: border-color 0.2s, color 0.2s;
+  letter-spacing: 0.06em;
+}
+.profile-chip:hover {
+  border-color: var(--border-hover);
+  color: var(--accent);
+}
 
 .hero-stats {
   display: flex;
