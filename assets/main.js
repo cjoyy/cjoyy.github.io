@@ -14,4 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.animationDelay = `${0.1 + i * 0.07}s`;
     card.style.animation = 'fadeUp 0.5s ease both';
   });
+
+  // Project filter tabs
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // show/hide cards
+      projectCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+          // re-trigger fade animation
+          card.style.animation = 'none';
+          card.offsetHeight; // reflow
+          card.style.animation = 'fadeUp 0.35s ease both';
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
 });
