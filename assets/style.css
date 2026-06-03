@@ -92,12 +92,27 @@ nav {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: var(--font-mono);
   font-size: 1.1rem;
   color: var(--accent);
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   font-weight: 400;
+}
+
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(99,179,237,0.18));
+}
+
+.nav-logo span {
+  line-height: 1;
 }
 
 .nav-links {
