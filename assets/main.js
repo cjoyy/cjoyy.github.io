@@ -1,5 +1,5 @@
 // ─── CalvinBot API endpoint ───
-const CALVINBOT_API = 'https://calvinbot-api.e67dc48c4dfacb99f49538f637c5fd6d.workers.dev';
+const CALVINBOT_API = 'https://calvinbot-api.joycalvin1604.workers.dev';
 
 document.addEventListener('DOMContentLoaded', () => {
 
