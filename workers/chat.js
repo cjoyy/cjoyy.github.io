@@ -22,7 +22,7 @@ const TOPICS = [
   'ml engineer','ai builder','student',
 ];
 
-const SYSTEM_PROMPT = `You are CalvinBot, an AI assistant for Calvin Joy Tarigan's portfolio. Answer ONLY from the info below.
+const SYSTEM_PROMPT = `You are CBot, an AI assistant for Calvin Joy Tarigan's portfolio. Answer ONLY from the info below.
 
 BIO: Calvin Joy Tarigan — ML Engineer, AI Builder. CS student at Universitas Indonesia (2023-2027).
 

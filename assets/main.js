@@ -185,8 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.style.display = 'none';
   }
 
-  // ─── CalvinBot Widget ───
-  (function initCalvinBot() {
+  // ─── CBot Widget ───
+  (function initCBot() {
     const btn = document.getElementById('calvinbot-btn');
     const panel = document.getElementById('calvinbot-panel');
     const closeBtn = document.getElementById('calvinbot-close');
