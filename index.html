@@ -3,134 +3,542 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calvin Joy Tarigan</title>
+  <title>Calvin Joy Tarigan — ML Engineer · AI Builder</title>
+  <meta name="description" content="Computer Science student at Universitas Indonesia focused on building and implementing machine learning systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="grid-overlay"></div>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="glow glow--1"></div>
+  <div class="glow glow--2"></div>
+  <div class="glow glow--3"></div>
 
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="#home" class="nav-logo">
       <img src="assets/logo.svg" alt="Calvin Joy Tarigan logo" class="nav-logo-mark" />
       <span>CJT</span>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="experience.html">Experience</a>
-      <a href="contact.html">Contact</a>
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
     </div>
   </nav>
 
-  <main class="home-main">
-    <div class="hero">
-      <div class="hero-tag"><span class="dot"></span> Open to opportunities</div>
-      <h1 class="hero-title">
-        Calvin<br />
-        <span class="outline-text">Joy</span><br />
-        Tarigan
-      </h1>
-      <div class="hero-right">
-        <p class="hero-sub">ML Engineer · AI Builder</p>
-        <p class="hero-desc">
-          Computer Science student at <strong>Universitas Indonesia</strong> focused on
-          building and implementing machine learning systems - from custom neural networks
-          and RL agents to production-ready full-stack platforms.
-        </p>
-        <div class="hero-cta">
-          <a href="projects.html" class="btn-primary">View Projects</a>
-          <a href="contact.html" class="btn-ghost">Get in touch →</a>
+  <main>
+    <!-- ============ HOME ============ -->
+    <section id="home" class="section active">
+      <div class="hero" data-reveal="hero">
+        <div class="hero-tag">
+          <span class="dot"></span> Open to opportunities
         </div>
-
-      </div>
-    </div>
-
-    <!-- Scrolling ticker -->
-    <div class="ticker-wrap">
-      <div class="ticker-label">TECH STACK</div>
-      <div class="ticker-track">
-        <div class="ticker-content">
-          <span>PyTorch</span><span class="sep">·</span>
-          <span>scikit-learn</span><span class="sep">·</span>
-          <span>TensorFlow</span><span class="sep">·</span>
-          <span>Python</span><span class="sep">·</span>
-          <span>Pandas</span><span class="sep">·</span>
-          <span>NumPy</span><span class="sep">·</span>
-          <span>PostgreSQL</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>Spring Boot</span><span class="sep">·</span>
-          <span>Next.js</span><span class="sep">·</span>
-          <span>Django</span><span class="sep">·</span>
-          <span>Kubernetes</span><span class="sep">·</span>
-          <span>Reinforcement Learning</span><span class="sep">·</span>
-          <span>PCA</span><span class="sep">·</span>
-          <span>K-Means</span><span class="sep">·</span>
-          <span>SMOTE</span><span class="sep">·</span>
-          <span>Java</span><span class="sep">·</span>
-          <span>TypeScript</span><span class="sep">·</span>
-          <span>Git</span><span class="sep">·</span>
-          <span>Jupyter</span><span class="sep">·</span>
-          <!-- duplicate for seamless loop -->
-          <span>PyTorch</span><span class="sep">·</span>
-          <span>scikit-learn</span><span class="sep">·</span>
-          <span>TensorFlow</span><span class="sep">·</span>
-          <span>Python</span><span class="sep">·</span>
-          <span>Pandas</span><span class="sep">·</span>
-          <span>NumPy</span><span class="sep">·</span>
-          <span>PostgreSQL</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>Spring Boot</span><span class="sep">·</span>
-          <span>Next.js</span><span class="sep">·</span>
-          <span>Django</span><span class="sep">·</span>
-          <span>Kubernetes</span><span class="sep">·</span>
-          <span>Reinforcement Learning</span><span class="sep">·</span>
-          <span>PCA</span><span class="sep">·</span>
-          <span>K-Means</span><span class="sep">·</span>
-          <span>SMOTE</span><span class="sep">·</span>
-          <span>Java</span><span class="sep">·</span>
-          <span>TypeScript</span><span class="sep">·</span>
-          <span>Git</span><span class="sep">·</span>
-          <span>Jupyter</span><span class="sep">·</span>
+        <h1 class="hero-title" data-hero-parallax>
+          Calvin<br />
+          <span class="hero-title--accent">Joy</span><br />
+          Tarigan
+        </h1>
+        <div class="hero-right">
+          <p class="hero-sub">ML Engineer &middot; AI Builder</p>
+          <p class="hero-desc">
+            Computer Science student at <strong>Universitas Indonesia</strong> focused on
+            building and implementing machine learning systems &mdash; from custom neural networks
+            and RL agents to production-ready full-stack platforms.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-ghost">Get in touch <span class="btn-arrow">&rarr;</span></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <section class="section-peek">
-      <div class="peek-header">
-        <h2>Selected Projects</h2>
-        <a href="projects.html" class="see-all">See all →</a>
+      <!-- Tech stack marquee -->
+      <div class="marquee-wrap" data-reveal>
+        <div class="marquee-track">
+          <div class="marquee-content">
+            <span>PyTorch</span><span>scikit-learn</span><span>TensorFlow</span><span>Python</span>
+            <span>Pandas</span><span>NumPy</span><span>PostgreSQL</span><span>Docker</span>
+            <span>Spring Boot</span><span>Next.js</span><span>Django</span><span>Kubernetes</span>
+            <span>Reinforcement Learning</span><span>PCA</span><span>K-Means</span>
+            <span>SMOTE</span><span>Java</span><span>TypeScript</span><span>Git</span><span>Jupyter</span>
+          </div>
+          <div class="marquee-content" aria-hidden="true">
+            <span>PyTorch</span><span>scikit-learn</span><span>TensorFlow</span><span>Python</span>
+            <span>Pandas</span><span>NumPy</span><span>PostgreSQL</span><span>Docker</span>
+            <span>Spring Boot</span><span>Next.js</span><span>Django</span><span>Kubernetes</span>
+            <span>Reinforcement Learning</span><span>PCA</span><span>K-Means</span>
+            <span>SMOTE</span><span>Java</span><span>TypeScript</span><span>Git</span><span>Jupyter</span>
+          </div>
+        </div>
       </div>
-      <div class="peek-cards">
-        <a href="projects.html" class="peek-card">
-          <div class="card-tag">Reinforcement Learning</div>
-          <h3>Vacuum Cleaning Robots MDP</h3>
-          <p>Modular RL experimentation framework in Python with custom environments, agent training, and reproducible logging.</p>
-          <div class="card-footer">Python · RL · LaTeX</div>
-        </a>
-        <a href="projects.html" class="peek-card">
-          <div class="card-tag">Deep Learning</div>
-          <h3>IDX Multi-Asset Forecasting</h3>
-          <p>Custom RNN/LSTM from scratch in PyTorch for Indonesian stock market prediction with ablation study.</p>
-          <div class="card-footer">PyTorch · LSTM · EDA</div>
-        </a>
-        <a href="projects.html" class="peek-card">
-          <div class="card-tag">ML Pipeline</div>
-          <h3>UFC Fight Analytics</h3>
-          <p>End-to-end ML pipeline with classification, regression, and unsupervised learning on real UFC data.</p>
-          <div class="card-footer">scikit-learn · Pandas · Seaborn</div>
-        </a>
+
+      <!-- Project previews -->
+      <div class="section-preview" data-reveal>
+        <div class="preview-header">
+          <h2>Selected Projects</h2>
+          <a href="#projects" class="preview-link">See all <span class="btn-arrow">&rarr;</span></a>
+        </div>
+        <div class="preview-cards">
+          <a href="#project-vacuum" class="preview-card" data-reveal>
+            <span class="preview-tag">Reinforcement Learning</span>
+            <h3>Vacuum Cleaning Robots MDP</h3>
+            <p>Modular RL experimentation framework in Python with custom environments, agent training, and reproducible logging.</p>
+            <span class="preview-footer">Python &middot; RL &middot; LaTeX</span>
+          </a>
+          <a href="#project-idx" class="preview-card" data-reveal>
+            <span class="preview-tag">Deep Learning</span>
+            <h3>IDX Multi-Asset Forecasting</h3>
+            <p>Custom RNN/LSTM from scratch in PyTorch for Indonesian stock market prediction with ablation study.</p>
+            <span class="preview-footer">PyTorch &middot; LSTM &middot; EDA</span>
+          </a>
+          <a href="#project-ufc" class="preview-card" data-reveal>
+            <span class="preview-tag">ML Pipeline</span>
+            <h3>UFC Fight Analytics</h3>
+            <p>End-to-end ML pipeline with classification, regression, and unsupervised learning on real UFC data.</p>
+            <span class="preview-footer">scikit-learn &middot; Pandas &middot; Seaborn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="page-header" data-reveal>
+        <span class="page-num">01</span>
+        <h1>Projects</h1>
+        <p>A collection of ML, AI, and software engineering work.</p>
+      </div>
+
+      <div class="filter-tabs" data-reveal>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="softeng">Software Eng</button>
+        <button class="filter-btn" data-filter="embedded">Embedded / IoT</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card featured" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Reinforcement Learning</span>
+          </div>
+          <h2>Vacuum Cleaning Robots MDP</h2>
+          <p>Developed a modular RL experimentation framework in Python enabling flexible algorithm implementation and custom scenario testing. Engineered environment setup, agent training, performance evaluation, and data visualization components. Results documented in a structured LaTeX technical report, with automated experiment logging for reproducibility.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Reinforcement Learning</span><span>MDP</span><span>LaTeX</span>
+          </div>
+          <a href="https://ristek.link/mdp-vacuum-rl" target="_blank" class="project-link">View Source &rarr;</a>
+        </div>
+
+        <div class="project-card featured" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Deep Learning</span>
+          </div>
+          <h2>IDX Multi-Asset Forecasting</h2>
+          <p>Built a deep learning forecasting pipeline for Indonesian stock market data. Designed and implemented a custom RNN/LSTM architecture from scratch in PyTorch with a hand-written training loop, GPU support, and no pretrained weights. Conducted an ablation study removing LSTM components to evaluate individual contributions to model performance, with full hyperparameter tuning and experiment logging.</p>
+          <div class="project-tags">
+            <span>PyTorch</span><span>RNN/LSTM</span><span>EDA</span><span>Ablation Study</span>
+          </div>
+          <a href="https://www.kaggle.com/chevin77" target="_blank" class="project-link">View on Kaggle &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">ML Pipeline</span>
+          </div>
+          <h2>UFC Fight Analytics</h2>
+          <p>Full ML pipeline on real-world UFC fight data covering preprocessing, exploratory analysis, and feature engineering. Benchmarked classification and regression models for fight outcome prediction. Applied unsupervised learning to uncover latent fighter patterns and handled class imbalance.</p>
+          <div class="project-tags">
+            <span>scikit-learn</span><span>Pandas</span><span>Seaborn</span><span>Matplotlib</span><span>Jupyter</span>
+          </div>
+          <a href="https://www.kaggle.com/chevin77" target="_blank" class="project-link">View on Kaggle &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">AI Agent</span>
+          </div>
+          <h2>Support Agent</h2>
+          <p>AI customer support agent built without framework (no-framework, manual agent loop) using Gemini API. Focused on understanding AI agent fundamentals from scratch &mdash; manual tool-calling, manual conversation state management, and RAG with ChromaDB.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Gemini API</span><span>ChromaDB</span>
+          </div>
+          <a href="https://github.com/cjoyy/support-agent" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <a href="https://cjoyy-support-agent.hf.space" target="_blank" class="project-link">Live Demo &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Multi-Agent System</span>
+          </div>
+          <h2>Ops Agent</h2>
+          <p>Multi-agent IT/Ops ticket resolution system with supervisor/router pattern, built with LangGraph. A follow-up to Support Agent &mdash; exploring when and why to use a framework for more complex orchestration: automatic routing between agents, human-in-the-loop approval for sensitive issues, and built-in persistence/checkpointing.</p>
+          <div class="project-tags">
+            <span>Python</span><span>LangGraph</span><span>Groq API</span>
+          </div>
+          <a href="https://github.com/cjoyy/ops-agent" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <a href="https://cjoyy-ops-agent.hf.space" target="_blank" class="project-link">Live Demo &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="embedded" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Embedded &middot; IoT</span>
+          </div>
+          <h2>Smart Garden</h2>
+          <p>Built an automatic plant care system across AVR XMEGA A3BU and ESP32 platforms. Implemented soil moisture sensing, pump relay control, LCD status display, ADC averaging, EMA filtering, FreeRTOS multitasking, grow light automation, and ESP-NOW broadcast telemetry.</p>
+          <div class="project-tags">
+            <span>AVR XMEGA</span><span>ESP32</span><span>FreeRTOS</span><span>ESP-NOW</span><span>ADC</span>
+          </div>
+          <a href="https://github.com/gilbertkristiaan/smart-garden" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Community Website</span>
+          </div>
+          <h2>Little Margo Catapult</h2>
+          <p>Developed a profile website for the Little Margo community, presenting community identity, information, and public-facing content through a clean deployed web experience.</p>
+          <div class="project-tags">
+            <span>Web</span><span>Vercel</span><span>Community Profile</span>
+          </div>
+          <a href="https://little-margo-catapult.vercel.app/" target="_blank" class="project-link">View Live Site &rarr;</a>
+          <a href="https://github.com/MichelineWL/LittleMargoCatapult" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Web Application</span>
+          </div>
+          <h2>Rewear Plus</h2>
+          <p>Built and deployed a web platform for Rewear Plus, focused on presenting a polished digital experience for a sustainable fashion and clothing reuse concept.</p>
+          <div class="project-tags">
+            <span>Web App</span><span>Vercel</span><span>Sustainable Fashion</span>
+          </div>
+          <a href="https://rewearplus.vercel.app/" target="_blank" class="project-link">View Live Site &rarr;</a>
+          <a href="https://github.com/SimforianusJonathan/rewear_plus" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">Full Stack &middot; DevOps</span>
+          </div>
+          <h2>HealthMate</h2>
+          <p>Comprehensive healthcare management web application with robust security features. Contributed to containerised deployment using Kubernetes, PostgreSQL integration with optimised queries, and advanced security measures for sensitive medical data.</p>
+          <div class="project-tags">
+            <span>PostgreSQL</span><span>Kubernetes</span><span>Docker</span><span>Security</span>
+          </div>
+          <a href="https://gitlab.cs.ui.ac.id/groups/pkpl/kelompok-82" target="_blank" class="project-link">View Repo (GitLab CS UI &mdash; Private) &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">Full Stack</span>
+          </div>
+          <h2>EventSphere</h2>
+          <p>Event management platform with Java Spring Boot backend and Next.js frontend. Designed and integrated RESTful APIs for event creation, management, and participation features.</p>
+          <div class="project-tags">
+            <span>Spring Boot</span><span>Next.js</span><span>REST API</span><span>Java</span>
+          </div>
+          <a href="https://github.com/orgs/A11-AdPro/repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">Backend &middot; Database</span>
+          </div>
+          <h2>SIZOPI &mdash; Zoo Management System</h2>
+          <p>Django-based backend with full CRUD operations and PostgreSQL schema design. Built efficient data models for tracking animal care, feeding schedules, and visitor information.</p>
+          <div class="project-tags">
+            <span>Django</span><span>PostgreSQL</span><span>Python</span>
+          </div>
+          <a href="https://github.com/BASDAD-D-06/SIZOPI" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2024</span>
+            <span class="project-type">Mobile &middot; Web</span>
+          </div>
+          <h2>Dinepasar</h2>
+          <p>Responsive web/mobile platform for restaurant discovery in Bali, featuring menus, ratings, and user review integration. Designed to help tourists find suitable dining options across Bali's diverse culinary landscape.</p>
+          <div class="project-tags">
+            <span>Mobile</span><span>Responsive Design</span><span>Reviews</span>
+          </div>
+          <a href="https://github.com/PBPC06/dinepasar_mobile" target="_blank" class="project-link">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section">
+      <div class="page-header" data-reveal>
+        <span class="page-num">02</span>
+        <h1>Experience</h1>
+        <p>Teaching, mentoring, and organizational roles.</p>
+      </div>
+
+      <div class="exp-layout">
+        <div class="exp-column">
+          <div class="exp-section-title" data-reveal>Teaching &amp; Mentoring</div>
+
+          <div class="exp-item" data-reveal>
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <span class="exp-period">Jan 2026 &ndash; Present</span>
+              <h3>Teaching Assistant</h3>
+              <div class="exp-place">Introduction to Software Security &middot; Fasilkom UI</div>
+              <p>Delivered course material on software security concepts and supported students through lab sessions and assignments.</p>
+            </div>
+          </div>
+
+          <div class="exp-item" data-reveal>
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <span class="exp-period">Aug 2025 &ndash; Jan 2026</span>
+              <h3>Coordinator of Teaching Assistant</h3>
+              <div class="exp-place">Discrete Mathematics 1 &middot; Fasilkom UI</div>
+              <p>Led a team of TAs coordinating weekly sessions, grading, and student support. Strengthened ability to communicate mathematical reasoning, directly supporting analytical skills in ML coursework.</p>
+            </div>
+          </div>
+
+          <div class="exp-item" data-reveal>
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <span class="exp-period">Apr 2024 &ndash; Sep 2024</span>
+              <h3>Programming Fundamentals Mentor</h3>
+              <div class="exp-place">Committee &amp; Volunteer &middot; Fasilkom UI</div>
+              <p>Mentored students with no prior coding background on programming fundamentals. Developed teaching materials and structured exercises; communicated complex technical topics to non-technical audiences.</p>
+            </div>
+          </div>
+
+          <div class="exp-section-title" style="margin-top:3rem;" data-reveal>Organization</div>
+
+          <div class="exp-item" data-reveal>
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+              <span class="exp-period">Jan 2024 &ndash; Dec 2024</span>
+              <h3>Staff &mdash; Sports Department</h3>
+              <div class="exp-place">BEM Fasilkom UI</div>
+              <p>Organised and coordinated faculty-wide sports activities and competitions. Developed teamwork and event management capabilities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-column">
+          <div class="exp-section-title" data-reveal>Education</div>
+
+          <div class="edu-card" data-reveal>
+            <div class="edu-logo">UI</div>
+            <div>
+              <h3>Universitas Indonesia</h3>
+              <div class="edu-degree">Bachelor of Computer Science</div>
+              <div class="edu-period">Aug 2023 &ndash; Aug 2027</div>
+              <div class="edu-courses">Relevant: Data Structures &amp; Algorithms, Machine Learning, Database Systems, Software Engineering, Computer Networks, OOP, Cyber Security</div>
+              <div class="edu-scholarship">scholarship BAKTI BCA 2025 &middot; PT Bank Central Asia Tbk</div>
+              <div class="edu-scholarship">scholarship Bank Indonesia (GenBI) 2026 &middot; Bank Indonesia</div>
+            </div>
+          </div>
+
+          <div class="exp-section-title" style="margin-top:3rem;" data-reveal>Certifications</div>
+
+          <div class="cert-card" data-reveal>
+            <span class="cert-icon">&#9674;</span>
+            <div>
+              <h3>Supervised Machine Learning: Regression &amp; Classification</h3>
+              <div class="cert-issuer">DeepLearning.AI / Coursera &middot; May 2026</div>
+              <div class="cert-id">Credential: 85JD5MW33TWW</div>
+            </div>
+          </div>
+
+          <div class="cert-card" data-reveal>
+            <span class="cert-icon">&#9674;</span>
+            <div>
+              <h3>Custom Models, Layers, and Loss Functions with TensorFlow</h3>
+              <div class="cert-issuer">DeepLearning.AI / Coursera &middot; May 2026</div>
+              <div class="cert-id">Credential: XV86XZTLL499</div>
+            </div>
+          </div>
+
+          <div class="exp-section-title" style="margin-top:3rem;" data-reveal>Languages</div>
+
+          <div class="lang-row" data-reveal>
+            <div class="lang-item">
+              <span class="lang-name">Indonesian</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Professional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-matrix" data-reveal>
+        <h2>Technical Skills</h2>
+        <div class="skills-groups">
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">ML / AI</span>
+            <div class="skill-tags">
+              <span>scikit-learn</span><span>PyTorch</span><span>TensorFlow</span>
+              <span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+              <span>Seaborn</span><span>SMOTE</span><span>PCA</span>
+              <span>K-Means</span><span>Reinforcement Learning</span>
+            </div>
+          </div>
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">Languages</span>
+            <div class="skill-tags">
+              <span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span>
+            </div>
+          </div>
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">Web &amp; Backend</span>
+            <div class="skill-tags">
+              <span>Spring Boot</span><span>Django</span><span>Next.js</span>
+              <span>RESTful APIs</span><span>HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">Database &amp; Cloud</span>
+            <div class="skill-tags">
+              <span>PostgreSQL</span><span>SQL</span><span>Docker</span>
+              <span>Kubernetes</span><span>Koyeb</span>
+            </div>
+          </div>
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">Dev Tools</span>
+            <div class="skill-tags">
+              <span>Git</span><span>Jupyter Notebook</span><span>LaTeX</span>
+              <span>API Testing</span><span>GitHub Copilot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="page-header" data-reveal>
+        <span class="page-num">03</span>
+        <h1>Get in Touch</h1>
+        <p>Open to internships, collaborations, and research opportunities.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-links">
+          <a href="mailto:joycalvin1604@gmail.com" class="contact-item" data-reveal>
+            <span class="ci-icon">@</span>
+            <div>
+              <span class="ci-label">Email</span>
+              <span class="ci-value">joycalvin1604@gmail.com</span>
+            </div>
+            <span class="ci-arrow">&nearr;</span>
+          </a>
+          <a href="https://linkedin.com/in/calvin-joy-tarigan" target="_blank" class="contact-item" data-reveal>
+            <span class="ci-icon">in</span>
+            <div>
+              <span class="ci-label">LinkedIn</span>
+              <span class="ci-value">calvin-joy-tarigan</span>
+            </div>
+            <span class="ci-arrow">&nearr;</span>
+          </a>
+          <a href="https://github.com/cjoyy" target="_blank" class="contact-item" data-reveal>
+            <span class="ci-icon">gh</span>
+            <div>
+              <span class="ci-label">GitHub</span>
+              <span class="ci-value">github.com/cjoyy</span>
+            </div>
+            <span class="ci-arrow">&nearr;</span>
+          </a>
+          <a href="https://www.kaggle.com/chevin77" target="_blank" class="contact-item" data-reveal>
+            <span class="ci-icon">kg</span>
+            <div>
+              <span class="ci-label">Kaggle</span>
+              <span class="ci-value">kaggle.com/chevin77</span>
+            </div>
+            <span class="ci-arrow">&nearr;</span>
+          </a>
+          <div class="contact-item no-link" data-reveal>
+            <span class="ci-icon">&#9742;</span>
+            <div>
+              <span class="ci-label">Phone</span>
+              <span class="ci-value">085695081829</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-aside">
+          <div class="availability-card" data-reveal>
+            <span class="avail-dot"></span>
+            <div>
+              <span class="avail-title">Available for</span>
+              <ul>
+                <li>Internships &amp; Part-time roles</li>
+                <li>ML/AI Research Collaboration</li>
+                <li>Open Source Contributions</li>
+                <li>Data Science Freelance Projects</li>
+              </ul>
+            </div>
+          </div>
+          <div class="location-card" data-reveal>
+            <span class="loc-label">Based in</span>
+            <span class="loc-value">Depok, Indonesia &#127470;&#127465;</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Calvin Joy Tarigan · Built with HTML/CSS · Hosted on GitHub Pages</p>
+    <p>&copy; 2025 Calvin Joy Tarigan &middot; Built with HTML/CSS &middot; Hosted on GitHub Pages</p>
   </footer>
 
-  <script src="assets/main.js"></script>
+  <!-- CalvinBot: AI chat widget -->
+  <div id="calvinbot-btn" aria-label="Open CalvinBot chat" role="button" tabindex="0">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>CalvinBot</span>
+  </div>
+
+  <div id="calvinbot-panel">
+    <div id="calvinbot-header">
+      <div class="cb-header-left">
+        <div class="cb-avatar">C</div>
+        <div>
+          <div class="cb-name">CalvinBot</div>
+          <div class="cb-status">Ask me about Calvin</div>
+        </div>
+      </div>
+      <button id="calvinbot-close" aria-label="Close chat">&times;</button>
+    </div>
+    <div id="calvinbot-messages">
+      <div class="cb-msg cb-msg--bot">
+        <div class="cb-msg-content">Hi! I can answer questions about Calvin's projects, skills, experience, and more. What would you like to know?</div>
+      </div>
+    </div>
+    <form id="calvinbot-form">
+      <input id="calvinbot-input" type="text" placeholder="Ask about Calvin..." autocomplete="off" />
+      <button id="calvinbot-send" type="submit" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <script type="module" src="assets/main.js"></script>
 </body>
 </html>

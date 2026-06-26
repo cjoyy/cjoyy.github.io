@@ -1,0 +1,7 @@
+name = "calvinbot-api"
+main = "workers/chat.js"
+compatibility_date = "2025-01-01"
+
+[[kv_namespaces]]
+binding = "CHAT_KV"
+id = "54bc80ddd58f479696d28d4b7ee61c99"
