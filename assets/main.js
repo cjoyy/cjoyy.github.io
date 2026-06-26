@@ -3,7 +3,24 @@ const CALVINBOT_API = 'https://calvinbot-api.093bae729a16e91d2764a0a8901f47ea.wo
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ─── Hash Routing ───
+  // ——— Scroll Reveal (IntersectionObserver) ———
+  // Must be initialized before navigateTo() references it (TDZ-safe)
+  let observer;
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('visible'));
+  }
+
+  // ——— Hash Routing ———
   const sections = document.querySelectorAll('.section');
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -35,22 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('popstate', () => navigateTo(location.hash || '#home'));
   navigateTo(location.hash || '#home');
-
-  // ─── Scroll Reveal (IntersectionObserver) ───
-  let observer;
-  if ('IntersectionObserver' in window) {
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-  } else {
-    document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('visible'));
-  }
 
   // ─── Project Filter ───
   const filterBtns = document.querySelectorAll('.filter-btn');
