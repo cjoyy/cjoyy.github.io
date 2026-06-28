@@ -561,6 +561,14 @@ main {
   border-radius: var(--radius-pill);
   letter-spacing: 0.04em;
 }
+.project-links {
+  min-height: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: auto;
+}
 .project-link {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -568,9 +576,7 @@ main {
   text-decoration: none;
   letter-spacing: 0.06em;
   transition: opacity 0.2s;
-  display: inline-block;
 }
-.project-link + .project-link { margin-left: 1.2rem; }
 .project-link:hover { opacity: 0.7; }
 
 /* ---- Experience ---- */

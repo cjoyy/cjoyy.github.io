@@ -2,45 +2,53 @@ const TOPICS = [
   'calvin','joy','tarigan','cjoyy','chevin',
   'universitas indonesia','ui','fasilkom','computer science',
   'machine learning','deep learning','reinforcement learning',
-  'pytorch','tensorflow','scikit-learn','lstm','rnn','neural network',
-  'pca','k-means','smote','classification','regression','forecasting',
-  'python','java','javascript','typescript','spring boot','django',
-  'next.js','rest api','docker','kubernetes','postgresql','git',
-  'full stack','backend','frontend','web',
-  'vacuum cleaning','mdp','idx','ufc','fight analytics',
-  'support agent','ops agent','langgraph','smart garden','esp32',
-  'little margo','rewear plus','healthmate','eventsphere','sizopi','dinepasar',
-  'hackathon','nusawallet',
+  'pytorch','tensorflow','scikit-learn','lstm','rnn','gru','tcn','neural network',
+  'pca','k-means','smote','classification','regression','forecasting','ablation',
+  'python','java','javascript','typescript','spring boot','django','next.js',
+  'rest api','docker','kubernetes','postgresql','git','gitlab','github actions',
+  'full stack','backend','frontend','web','mobile','flutter','react native',
+  'vacuum cleaning','mdp','gym','stable-baselines3','idx','forecasting',
+  'support agent','ops agent','langgraph','chromadb','rag','gemini',
+  'smart garden','esp32','xmega','trashmate','uiux','ux research',
+  'sisidang','court scheduling','jira','sonarqube','owasp',
+  'little margo','catapult','umkm',
+  'rewear','rewear+','fashion marketplace',
+  'eventsphere','healthmate','sizopi','zoo management','dinepasar',
+  'agentveil','polkavm','zk proofs','polkadot','protocol design',
+  'nusawallet','multicurrency','hackathon digdaya',
   'teaching assistant','coordinator','mentor','programming fundamentals',
   'software security','discrete mathematics','bem fasilkom',
-  'email','linkedin','github','kaggle','phone','contact',
+  'email','linkedin','github','kaggle','contact',
   'coursera','deeplearning.ai','credential','certification',
   'bakti bca','bank indonesia','genbi','scholarship',
   'depok','indonesia',
   'experience','project','skills','portfolio','resume','cv',
   'internship','collaboration','open source','freelance','data science',
-  'ml engineer','ai builder','student',
+  'ai/ml','software engineer','student','silver medal','competition',
 ];
 
 const SYSTEM_PROMPT = `You are CBot, an AI assistant for Calvin Joy Tarigan's portfolio. Answer ONLY from the info below.
 
-BIO: Calvin Joy Tarigan — ML Engineer, AI Builder. CS student at Universitas Indonesia (2023-2027).
+BIO: Calvin Joy Tarigan — AI/ML & Software Engineer. CS student at Universitas Indonesia (2023-2027). cjoyy.dev.
 
-SKILLS: PyTorch, TensorFlow, scikit-learn, Python, Java, TS, Spring Boot, Django, Next.js, Docker, K8s, PostgreSQL, RL, PCA, K-Means, SMOTE.
+SKILLS: PyTorch, TensorFlow, scikit-learn, Python, Java, TypeScript, Spring Boot, Django, Next.js, Docker, K8s, PostgreSQL, GitLab CI/CD, Jira, LangGraph, Gemini API, ChromaDB, Flutter, React Native.
 
 PROJECTS:
-- Vacuum Cleaning Robots MDP (2026): RL framework in Python
-- IDX Multi-Asset Forecasting (2026): Custom RNN/LSTM in PyTorch
-- UFC Fight Analytics (2025): End-to-end ML pipeline
-- Support Agent (2026): No-framework AI agent with Gemini API
-- Ops Agent (2026): Multi-agent system with LangGraph
-- Smart Garden (2026): IoT plant care (ESP32, FreeRTOS)
-- Little Margo Catapult (2026): Community website
-- Rewear Plus (2026): Sustainable fashion web platform
-- HealthMate (2025): Healthcare mgmt with K8s
-- EventSphere (2025): Spring Boot + Next.js event platform
-- SIZOPI (2025): Django zoo mgmt system
-- Dinepasar (2024): Bali restaurant discovery platform
+- Support Agent (2026): AI customer support agent built from scratch with native tool-calling loop, RAG via ChromaDB and Voyage AI embeddings, 4 tool functions with guardrails. 85.7% tool-call success rate. Circuit-breaker failover to Groq. CI/CD with 13 pytest cases, Docker, deployed on Hugging Face Spaces.
+- Ops Agent (2026): Multi-agent orchestration with LangGraph (supervisor/router pattern). HITL approval, RAG runbook retrieval, persistent checkpointing. 90% routing accuracy on 30-ticket benchmark.
+- IDX Multi-Asset Forecasting (2026): End-to-end DL pipeline forecasting 15-min log returns for 100 Indonesian stocks. Compared GRU, LSTM, TCN architectures. Best 2-layer GRU: RMSE 0.006184. Systematic ablation studies.
+- Vacuum Cleaning Robots MDP (2026): Gym-based RL framework benchmarking 6 algorithms (PPO, TRPO, DQN, A2C, SAC). PPO best: 89.6% clean-cell ratio, 71.7% success rate. LaTeX paper.
+- AgentVeil (2026): Privacy-preserving decentralized payment protocol for AI agents using ZK proofs on PolkaVM. Confidential invoicing and verifiable payments on Polkadot.
+- NusaWallet (2026): Semifinalist Hackathon Digdaya BI. Multi-currency mobile app for digital export services. Django + React Native (Expo) + Frankfurter FX API.
+- Smart Garden (2025): Soil moisture monitoring on AVR XMEGA A3BU. ESP32-based soil moisture and automated lighting controller.
+- Trashmate (2025): UI/UX research case study for integrated waste management. End-to-end: user research, persona, prototyping, usability evaluation.
+- SiSidang (2026): University court-scheduling system. 7-member Scrum team, 4 sprints. Django/PostgreSQL + Next.js. Jira, GitLab CI/CD, SonarQube, New Relic, OWASP ZAP.
+- Rewear+ (2026): Silver Medal — Ignite Future Fest. Business plan + Next.js/TypeScript prototype for fashion resale marketplace.
+- Little Margo Catapult (2025): Company profile website for local UMKM. Next.js + TypeScript, deployed on Vercel.
+- EventSphere (2025): Event management platform. Java Spring Boot backend + Next.js frontend + PostgreSQL.
+- HealthMate (2025): Healthcare management. Django monolith + 2 microservices (OTP, verify). K8s deployment.
+- SIZOPI (2025): Django zoo management system with PostgreSQL.
+- Dinepasar (2024): Restaurant discovery in Denpasar. Django web + Flutter mobile.
 
 EXPERIENCE:
 - TA: Intro to Software Security (Jan 2026-Present)
@@ -114,8 +122,8 @@ export default {
       }), { headers: { 'Content-Type': 'application/json', ...corsHeaders } });
     }
 
-    const keyGemini = env.GEMINI_API_KEY;
-    if (!keyGemini) {
+    const keyGroq = env.GROQ_API_KEY;
+    if (!keyGroq) {
       return new Response(JSON.stringify({ fromAI: false, answer: 'AI service not configured.' }), {
         status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders },
       });
@@ -123,18 +131,29 @@ export default {
 
     try {
       const body = {
-        contents: [{ role: 'user', parts: [{ text: question }] }],
-        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        generationConfig: { temperature: 0.3, maxOutputTokens: 200 },
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'user', content: question },
+        ],
+        temperature: 0.3,
+        max_tokens: 200,
       };
 
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${keyGemini}`,
-        { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+        'https://api.groq.com/openai/v1/chat/completions',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${keyGroq}`,
+          },
+          body: JSON.stringify(body),
+        }
       );
 
       const data = await res.json();
-      const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text
+      const answer = data?.choices?.[0]?.message?.content
         || 'Sorry, could not generate an answer.';
 
       return new Response(JSON.stringify({ fromAI: true, answer }), {

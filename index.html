@@ -43,7 +43,7 @@
           Tarigan
         </h1>
         <div class="hero-right">
-          <p class="hero-sub">ML Engineer &middot; AI Builder</p>
+          <p class="hero-sub">AI/ML &middot; Software Engineer</p>
           <p class="hero-desc">
             Computer Science student at <strong>Universitas Indonesia</strong> focused on
             building and implementing machine learning systems &mdash; from custom neural networks
@@ -84,22 +84,22 @@
         </div>
         <div class="preview-cards">
           <div class="preview-card" data-reveal>
+            <span class="preview-tag">AI Agent</span>
+            <h3>Support Agent</h3>
+            <p>Customer support agent with native tool-calling, RAG with ChromaDB, and 85.7% tool-call success rate.</p>
+            <span class="preview-footer">Python &middot; Gemini API &middot; FastAPI</span>
+          </div>
+          <div class="preview-card" data-reveal>
+            <span class="preview-tag">Multi-Agent System</span>
+            <h3>Ops Agent</h3>
+            <p>Multi-agent IT ticket resolution with LangGraph, HITL approval, and 90% routing accuracy.</p>
+            <span class="preview-footer">Python &middot; LangGraph &middot; Groq API</span>
+          </div>
+          <div class="preview-card" data-reveal>
             <span class="preview-tag">Reinforcement Learning</span>
             <h3>Vacuum Cleaning Robots MDP</h3>
-            <p>Modular RL experimentation framework in Python with custom environments, agent training, and reproducible logging.</p>
-            <span class="preview-footer">Python &middot; RL &middot; LaTeX</span>
-          </div>
-          <div class="preview-card" data-reveal>
-            <span class="preview-tag">Deep Learning</span>
-            <h3>IDX Multi-Asset Forecasting</h3>
-            <p>Custom RNN/LSTM from scratch in PyTorch for Indonesian stock market prediction with ablation study.</p>
-            <span class="preview-footer">PyTorch &middot; LSTM &middot; EDA</span>
-          </div>
-          <div class="preview-card" data-reveal>
-            <span class="preview-tag">ML Pipeline</span>
-            <h3>UFC Fight Analytics</h3>
-            <p>End-to-end ML pipeline with classification, regression, and unsupervised learning on real UFC data.</p>
-            <span class="preview-footer">scikit-learn &middot; Pandas &middot; Seaborn</span>
+            <p>Modular RL experimentation framework benchmarking 6 algorithms on a 7x7-grid vacuum environment.</p>
+            <span class="preview-footer">Python &middot; OpenAI Gym &middot; Stable-Baselines3</span>
           </div>
         </div>
       </div>
@@ -110,12 +110,12 @@
       <div class="page-header" data-reveal>
         <span class="page-num">01</span>
         <h1>Projects</h1>
-        <p>A collection of ML, AI, and software engineering work.</p>
+        <p>A collection of AI/ML and software engineering work.</p>
       </div>
 
       <div class="filter-tabs" data-reveal>
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="ml">AI / ML</button>
         <button class="filter-btn" data-filter="softeng">Software Eng</button>
         <button class="filter-btn" data-filter="embedded">Embedded / IoT</button>
       </div>
@@ -124,95 +124,126 @@
         <div class="project-card featured" data-category="ml" data-reveal>
           <div class="project-meta">
             <span class="project-year">2026</span>
-            <span class="project-type">Reinforcement Learning</span>
+            <span class="project-type">AI Agent</span>
           </div>
-          <h2>Vacuum Cleaning Robots MDP</h2>
-          <p>Developed a modular RL experimentation framework in Python enabling flexible algorithm implementation and custom scenario testing. Engineered environment setup, agent training, performance evaluation, and data visualization components. Results documented in a structured LaTeX technical report, with automated experiment logging for reproducibility.</p>
+          <h2>Support Agent</h2>
+          <p>Built a customer support agent from scratch in Python implementing a native tool-calling loop without agentic frameworks. Integrated RAG with ChromaDB and Voyage AI embeddings, engineered 4 tool functions with guardrails, and achieved 85.7% tool-call success rate on a 20-case golden evaluation dataset. Implemented circuit-breaker failover to a secondary LLM provider and CI/CD with 13 automated pytest cases via GitHub Actions, containerized with Docker and deployed on Hugging Face Spaces.</p>
           <div class="project-tags">
-            <span>Python</span><span>Reinforcement Learning</span><span>MDP</span><span>LaTeX</span>
+            <span>Python</span><span>Gemini API</span><span>ChromaDB</span><span>FastAPI</span><span>Docker</span><span>pytest</span>
           </div>
-          <a href="https://ristek.link/mdp-vacuum-rl" target="_blank" class="project-link">View Source &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/cjoyy/support-agent" target="_blank" class="project-link">Source &rarr;</a>
+          <a href="https://cjoyy-support-agent.hf.space" target="_blank" class="project-link">Demo &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card featured" data-category="ml" data-reveal>
           <div class="project-meta">
             <span class="project-year">2026</span>
-            <span class="project-type">Deep Learning</span>
-          </div>
-          <h2>IDX Multi-Asset Forecasting</h2>
-          <p>Built a deep learning forecasting pipeline for Indonesian stock market data. Designed and implemented a custom RNN/LSTM architecture from scratch in PyTorch with a hand-written training loop, GPU support, and no pretrained weights. Conducted an ablation study removing LSTM components to evaluate individual contributions to model performance, with full hyperparameter tuning and experiment logging.</p>
-          <div class="project-tags">
-            <span>PyTorch</span><span>RNN/LSTM</span><span>EDA</span><span>Ablation Study</span>
-          </div>
-          <a href="https://www.kaggle.com/chevin77" target="_blank" class="project-link">View on Kaggle &rarr;</a>
-        </div>
-
-        <div class="project-card" data-category="ml" data-reveal>
-          <div class="project-meta">
-            <span class="project-year">2025</span>
-            <span class="project-type">ML Pipeline</span>
-          </div>
-          <h2>UFC Fight Analytics</h2>
-          <p>Full ML pipeline on real-world UFC fight data covering preprocessing, exploratory analysis, and feature engineering. Benchmarked classification and regression models for fight outcome prediction. Applied unsupervised learning to uncover latent fighter patterns and handled class imbalance.</p>
-          <div class="project-tags">
-            <span>scikit-learn</span><span>Pandas</span><span>Seaborn</span><span>Matplotlib</span><span>Jupyter</span>
-          </div>
-          <a href="https://www.kaggle.com/chevin77" target="_blank" class="project-link">View on Kaggle &rarr;</a>
-        </div>
-
-        <div class="project-card" data-category="ml" data-reveal>
-          <div class="project-meta">
-            <span class="project-year">2026</span>
-            <span class="project-type">AI Agent</span>
-          </div>
-          <h2>Support Agent</h2>
-          <p>AI customer support agent built without framework (no-framework, manual agent loop) using Gemini API. Focused on understanding AI agent fundamentals from scratch &mdash; manual tool-calling, manual conversation state management, and RAG with ChromaDB.</p>
-          <div class="project-tags">
-            <span>Python</span><span>Gemini API</span><span>ChromaDB</span>
-          </div>
-          <a href="https://github.com/cjoyy/support-agent" target="_blank" class="project-link">View on GitHub &rarr;</a>
-          <a href="https://cjoyy-support-agent.hf.space" target="_blank" class="project-link">Live Demo &rarr;</a>
-        </div>
-
-        <div class="project-card" data-category="ml" data-reveal>
-          <div class="project-meta">
-            <span class="project-year">2026</span>
             <span class="project-type">Multi-Agent System</span>
           </div>
           <h2>Ops Agent</h2>
-          <p>Multi-agent IT/Ops ticket resolution system with supervisor/router pattern, built with LangGraph. A follow-up to Support Agent &mdash; exploring when and why to use a framework for more complex orchestration: automatic routing between agents, human-in-the-loop approval for sensitive issues, and built-in persistence/checkpointing.</p>
+          <p>Designed a multi-agent orchestration system using LangGraph with a supervisor/router pattern coordinating Technical, Billing, and Security agents. Implemented human-in-the-loop approval for sensitive operations and RAG-backed runbook retrieval via ChromaDB with persistent checkpointing. Achieved 90% routing accuracy on a 30-ticket golden evaluation dataset with 16 automated tests.</p>
           <div class="project-tags">
-            <span>Python</span><span>LangGraph</span><span>Groq API</span>
+            <span>Python</span><span>LangGraph</span><span>Groq API</span><span>ChromaDB</span><span>Docker</span><span>pytest</span>
           </div>
-          <a href="https://github.com/cjoyy/ops-agent" target="_blank" class="project-link">View on GitHub &rarr;</a>
-          <a href="https://cjoyy-ops-agent.hf.space" target="_blank" class="project-link">Live Demo &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/cjoyy/ops-agent" target="_blank" class="project-link">Source &rarr;</a>
+          <a href="https://cjoyy-ops-agent.hf.space" target="_blank" class="project-link">Demo &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Deep Learning</span>
+          </div>
+          <h2>IDX Multi-Asset Forecasting</h2>
+          <p>Built an end-to-end deep learning pipeline to forecast 15-minute future log returns for 100 active Indonesian stocks using intraday data from 787 IDX tickers. Implemented and compared GRU, LSTM, and TCN architectures; the best-performing 2-layer GRU achieved validation RMSE of 0.006184. Conducted systematic ablation studies revealing architectural design trade-offs.</p>
+          <div class="project-tags">
+            <span>PyTorch</span><span>GRU/LSTM/TCN</span><span>Pandas</span><span>NumPy</span><span>Ablation Study</span>
+          </div>
+          <div class="project-links">
+          <a href="https://ristek.link/idx-forecasting" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">Reinforcement Learning</span>
+          </div>
+          <h2>Vacuum Cleaning Robots MDP</h2>
+          <p>Built a modular Gym-based experimentation framework benchmarking 6 RL algorithms on a 7x7-grid vacuum-cleaning environment. PPO emerged as the best policy with 89.6% clean-cell ratio and 71.7% task success rate. Automated experiment runs and evaluation logging for reproducible analysis, documented in a structured LaTeX technical report.</p>
+          <div class="project-tags">
+            <span>Python</span><span>OpenAI Gym</span><span>Stable-Baselines3</span><span>LaTeX</span>
+          </div>
+          <div class="project-links">
+          <a href="https://ristek.link/mdp-vacuum-rl" target="_blank" class="project-link">Paper &rarr;</a>
+          <a href="https://github.com/SimforianusJonathan/Vaccum-Cleaner-Robot-Paper" target="_blank" class="project-link">Source Code &rarr;</a>
+          <a href="https://github.com/ctrlcsui/mrl26" target="_blank" class="project-link">Source (Private) &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">AI Application</span>
+          </div>
+          <h2>NusaWallet</h2>
+          <p>Semifinalist &mdash; Hackathon Digdaya BI 2026. Built a multi-currency mobile application supporting the digitalization of export services for freelancers and digital MSMEs in Indonesia. Backend built with Django; mobile client built with React Native (Expo), integrated with live foreign-exchange rates via the Frankfurter API.</p>
+          <div class="project-tags">
+            <span>Django</span><span>React Native</span><span>Expo</span><span>Frankfurter API</span>
+          </div>
+          <div class="project-links">
+          <a href="https://github.com/orgs/Nusa-Wallet/repositories" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="embedded" data-reveal>
           <div class="project-meta">
-            <span class="project-year">2026</span>
+            <span class="project-year">2025</span>
             <span class="project-type">Embedded &middot; IoT</span>
           </div>
           <h2>Smart Garden</h2>
-          <p>Built an automatic plant care system across AVR XMEGA A3BU and ESP32 platforms. Implemented soil moisture sensing, pump relay control, LCD status display, ADC averaging, EMA filtering, FreeRTOS multitasking, grow light automation, and ESP-NOW broadcast telemetry.</p>
+          <p>Built a soil-moisture monitoring system on the AVR XMEGA A3BU microcontroller platform. Extended the system with an ESP32-based soil moisture and automated lighting controller.</p>
           <div class="project-tags">
-            <span>AVR XMEGA</span><span>ESP32</span><span>FreeRTOS</span><span>ESP-NOW</span><span>ADC</span>
+            <span>AVR XMEGA A3BU</span><span>ESP32</span><span>Embedded C</span>
           </div>
-          <a href="https://github.com/gilbertkristiaan/smart-garden" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/gilbertkristiaan/smart-garden" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="embedded" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">UX Research</span>
+          </div>
+          <h2>Trashmate</h2>
+          <p>&ldquo;Inovasi Digital untuk Pengelolaan Sampah yang Terintegrasi&rdquo; &mdash; a full UI/UX research case study for an integrated digital waste-management solution. Carried the project end-to-end through the UX research lifecycle: user research, persona development, prototyping, and usability evaluation.</p>
+          <div class="project-tags">
+            <span>User Research</span><span>Prototyping</span><span>Usability Evaluation</span>
+          </div>
+          <div class="project-links">
+          <a href="https://ristek.link/broster" target="_blank" class="project-link">Slides &rarr;</a>
+          <a href="https://ristek.link/TRASHMATE" target="_blank" class="project-link">Prototype &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
           <div class="project-meta">
             <span class="project-year">2026</span>
-            <span class="project-type">Community Website</span>
+            <span class="project-type">Full Stack &middot; DevOps</span>
           </div>
-          <h2>Little Margo Catapult</h2>
-          <p>Developed a profile website for the Little Margo community, presenting community identity, information, and public-facing content through a clean deployed web experience.</p>
+          <h2>SiSidang &mdash; University Court-Scheduling System</h2>
+          <p>Worked in a 7-member Scrum team over 4 sprints to deliver stakeholder-driven features and bug fixes for a production web application. Maintained and refactored a legacy Django/PostgreSQL backend paired with a Next.js frontend across 4 repositories. Used Jira, GitLab CI/CD, Docker, SonarQube, New Relic, and OWASP ZAP for project management, deployment automation, and security assurance.</p>
           <div class="project-tags">
-            <span>Web</span><span>Vercel</span><span>Community Profile</span>
+            <span>Django</span><span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>GitLab CI/CD</span><span>Jira</span>
           </div>
-          <a href="https://little-margo-catapult.vercel.app/" target="_blank" class="project-link">View Live Site &rarr;</a>
-          <a href="https://github.com/MichelineWL/LittleMargoCatapult" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://ristek.link/sisidang" target="_blank" class="project-link">Site &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
@@ -220,26 +251,31 @@
             <span class="project-year">2026</span>
             <span class="project-type">Web Application</span>
           </div>
-          <h2>Rewear Plus</h2>
-          <p>Built and deployed a web platform for Rewear Plus, focused on presenting a polished digital experience for a sustainable fashion and clothing reuse concept.</p>
+          <h2>Rewear+</h2>
+          <p>Silver Medal &mdash; Ignite Future Fest 2026 National Essay &amp; Business Plan Competition. Authored a business plan proposal on technology-driven digital transformation and built a supporting prototype for Rewear+, a fashion resale marketplace concept, using Next.js and TypeScript.</p>
           <div class="project-tags">
-            <span>Web App</span><span>Vercel</span><span>Sustainable Fashion</span>
+            <span>Next.js</span><span>TypeScript</span>
           </div>
-          <a href="https://rewearplus.vercel.app/" target="_blank" class="project-link">View Live Site &rarr;</a>
-          <a href="https://github.com/SimforianusJonathan/rewear_plus" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/SimforianusJonathan/rewear_plus" target="_blank" class="project-link">Source &rarr;</a>
+          <a href="https://ristek.link/ppt-rewear" target="_blank" class="project-link">Slides &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
           <div class="project-meta">
             <span class="project-year">2025</span>
-            <span class="project-type">Full Stack &middot; DevOps</span>
+            <span class="project-type">Community Website</span>
           </div>
-          <h2>HealthMate</h2>
-          <p>Comprehensive healthcare management web application with robust security features. Contributed to containerised deployment using Kubernetes, PostgreSQL integration with optimised queries, and advanced security measures for sensitive medical data.</p>
+          <h2>Little Margo Catapult</h2>
+          <p>Solved a digital-presence problem for Little Margo, a local UMKM, by building a company profile website using Next.js and TypeScript deployed on Vercel. Collaborated in a 2-person team where both developers worked full-stack.</p>
           <div class="project-tags">
-            <span>PostgreSQL</span><span>Kubernetes</span><span>Docker</span><span>Security</span>
+            <span>Next.js</span><span>TypeScript</span><span>Vercel</span>
           </div>
-          <a href="https://gitlab.cs.ui.ac.id/groups/pkpl/kelompok-82" target="_blank" class="project-link">View Repo (GitLab CS UI &mdash; Private) &rarr;</a>
+          <div class="project-links">
+          <a href="https://little-margo-catapult.vercel.app/" target="_blank" class="project-link">Site &rarr;</a>
+          <a href="https://github.com/MichelineWL/LittleMargoCatapult" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
@@ -248,11 +284,28 @@
             <span class="project-type">Full Stack</span>
           </div>
           <h2>EventSphere</h2>
-          <p>Event management platform with Java Spring Boot backend and Next.js frontend. Designed and integrated RESTful APIs for event creation, management, and participation features.</p>
+          <p>Built backend with Java Spring Boot and a responsive frontend with Next.js backed by PostgreSQL. Designed and integrated RESTful APIs for comprehensive event creation, management, and participation features.</p>
           <div class="project-tags">
             <span>Spring Boot</span><span>Next.js</span><span>REST API</span><span>Java</span>
           </div>
-          <a href="https://github.com/orgs/A11-AdPro/repositories" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/orgs/A11-AdPro/repositories" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2025</span>
+            <span class="project-type">Full Stack &middot; DevOps</span>
+          </div>
+          <h2>HealthMate</h2>
+          <p>Collaborated on a comprehensive healthcare management web application across 3 repositories backed by PostgreSQL. Core monolith built with Django and HTML/CSS frontend with 2 additional microservices for OTP and phone verification. Contributed to containerized deployment using Kubernetes and implemented advanced security measures for sensitive medical data.</p>
+          <div class="project-tags">
+            <span>Django</span><span>PostgreSQL</span><span>Kubernetes</span><span>Docker</span><span>Security</span>
+          </div>
+          <div class="project-links">
+          <a href="https://gitlab.cs.ui.ac.id/pkpl/kelompok-82" target="_blank" class="project-link">Source (Private) &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
@@ -261,11 +314,13 @@
             <span class="project-type">Backend &middot; Database</span>
           </div>
           <h2>SIZOPI &mdash; Zoo Management System</h2>
-          <p>Django-based backend with full CRUD operations and PostgreSQL schema design. Built efficient data models for tracking animal care, feeding schedules, and visitor information.</p>
+          <p>Developed a Django-based monolith backend with full CRUD operations and an HTML/CSS frontend, contributing to PostgreSQL schema design. Created efficient data models for tracking animal care, feeding schedules, and visitor information.</p>
           <div class="project-tags">
-            <span>Django</span><span>PostgreSQL</span><span>Python</span>
+            <span>Django</span><span>PostgreSQL</span><span>Python</span><span>HTML/CSS</span>
           </div>
-          <a href="https://github.com/BASDAD-D-06/SIZOPI" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/BASDAD-D-06/SIZOPI" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
         </div>
 
         <div class="project-card" data-category="softeng" data-reveal>
@@ -274,11 +329,29 @@
             <span class="project-type">Mobile &middot; Web</span>
           </div>
           <h2>Dinepasar</h2>
-          <p>Responsive web/mobile platform for restaurant discovery in Bali, featuring menus, ratings, and user review integration. Designed to help tourists find suitable dining options across Bali's diverse culinary landscape.</p>
+          <p>Eksplorasi cita rasa khas kuliner Denpasar &mdash; built a responsive web and mobile platform for restaurant discovery featuring menus, ratings, and user reviews across 2 repositories. Web client built with Django and HTML/CSS; mobile client built with Flutter (Dart), both backed by a shared Django backend.</p>
           <div class="project-tags">
-            <span>Mobile</span><span>Responsive Design</span><span>Reviews</span>
+            <span>Django</span><span>HTML/CSS</span><span>Flutter</span><span>Dart</span>
           </div>
-          <a href="https://github.com/PBPC06/dinepasar_mobile" target="_blank" class="project-link">View on GitHub &rarr;</a>
+          <div class="project-links">
+          <a href="https://github.com/PBPC06/repositories" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="softeng" data-reveal>
+          <div class="project-meta">
+            <span class="project-year">2026</span>
+            <span class="project-type">ZK &middot; Blockchain</span>
+          </div>
+          <h2>AgentVeil</h2>
+          <p>Privacy-preserving decentralized payment protocol for AI agents using ZK proofs on PolkaVM, enabling confidential invoicing and verifiable payments on Polkadot.</p>
+          <div class="project-tags">
+            <span>PolkaVM</span><span>ZK Proofs</span><span>Polkadot</span><span>Protocol Design</span>
+          </div>
+          <div class="project-links">
+          <a href="https://agent-veil-one.vercel.app/" target="_blank" class="project-link">Site &rarr;</a>
+          <a href="https://github.com/RelAthalla/AgentVeil" target="_blank" class="project-link">Source &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
@@ -347,7 +420,7 @@
               <h3>Universitas Indonesia</h3>
               <div class="edu-degree">Bachelor of Computer Science</div>
               <div class="edu-period">Aug 2023 &ndash; Aug 2027</div>
-              <div class="edu-courses">Relevant: Data Structures &amp; Algorithms, Machine Learning, Database Systems, Software Engineering, Computer Networks, OOP, Cyber Security</div>
+              <div class="edu-courses">Relevant: Data Structures & Algorithms, Machine Learning & Reinforcement Learning, Deep Learning, Computer Vision, Data Mining, Database Systems, Software Engineering </div>
               <div class="edu-scholarship">scholarship BAKTI BCA 2025 &middot; PT Bank Central Asia Tbk</div>
               <div class="edu-scholarship">scholarship Bank Indonesia (GenBI) 2026 &middot; Bank Indonesia</div>
             </div>
@@ -392,39 +465,44 @@
         <h2>Technical Skills</h2>
         <div class="skills-groups">
           <div class="skill-group" data-reveal>
-            <span class="skill-group-title">ML / AI</span>
+            <span class="skill-group-title">Programming</span>
             <div class="skill-tags">
-              <span>scikit-learn</span><span>PyTorch</span><span>TensorFlow</span>
-              <span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
-              <span>Seaborn</span><span>SMOTE</span><span>PCA</span>
-              <span>K-Means</span><span>Reinforcement Learning</span>
+              <span>Python</span><span>Java</span>
             </div>
           </div>
           <div class="skill-group" data-reveal>
-            <span class="skill-group-title">Languages</span>
+            <span class="skill-group-title">AI / ML</span>
             <div class="skill-tags">
-              <span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span>
+              <span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span>
+              <span>Pandas</span><span>NumPy</span>
             </div>
           </div>
           <div class="skill-group" data-reveal>
-            <span class="skill-group-title">Web &amp; Backend</span>
+            <span class="skill-group-title">Generative AI / LLM</span>
             <div class="skill-tags">
-              <span>Spring Boot</span><span>Django</span><span>Next.js</span>
-              <span>RESTful APIs</span><span>HTML/CSS</span>
+              <span>LangGraph</span><span>RAG</span><span>Vector Databases (ChromaDB)</span>
+              <span>LLM Tool-Calling &amp; Agentic Systems</span>
             </div>
           </div>
           <div class="skill-group" data-reveal>
-            <span class="skill-group-title">Database &amp; Cloud</span>
+            <span class="skill-group-title">Specializations</span>
             <div class="skill-tags">
-              <span>PostgreSQL</span><span>SQL</span><span>Docker</span>
-              <span>Kubernetes</span><span>Koyeb</span>
+              <span>Deep Learning</span><span>Time Series Forecasting</span>
+              <span>Reinforcement Learning</span>
             </div>
           </div>
           <div class="skill-group" data-reveal>
-            <span class="skill-group-title">Dev Tools</span>
+            <span class="skill-group-title">Backend</span>
             <div class="skill-tags">
-              <span>Git</span><span>Jupyter Notebook</span><span>LaTeX</span>
-              <span>API Testing</span><span>GitHub Copilot</span>
+              <span>Spring Boot</span><span>Django</span><span>FastAPI</span>
+              <span>REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-group" data-reveal>
+            <span class="skill-group-title">Infrastructure</span>
+            <div class="skill-tags">
+              <span>PostgreSQL</span><span>Oracle</span><span>Docker</span>
+              <span>Kubernetes</span><span>Git</span>
             </div>
           </div>
         </div>
@@ -505,7 +583,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Calvin Joy Tarigan &middot; Built with HTML/CSS &middot; Hosted on GitHub Pages</p>
+    <p>&copy; 2026 Calvin Joy Tarigan &middot; Built with HTML/CSS &middot; Hosted on GitHub Pages</p>
   </footer>
 
   <!-- CBot: AI chat widget -->
